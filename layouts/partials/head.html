@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="pl-PL">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -23,12 +22,16 @@
     <!-- Characters max 60-->
     <title>{{.Title}}</title>
     <link rel="shortcut icon" href="{{.Site.Params.favicon | default "sam.ico" | absURL }}" id="favicon">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
     <link rel="stylesheet" href="{{ "css/style.css" | absURL}}">
+    <link rel="stylesheet" href="{{ "css/instag.css" | absURL}}">
     <!-- Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
     <!-- jQuery-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js" async></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     {{ if .Site.GoogleAnalytics }}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.GoogleAnalytics}}"></script>
@@ -40,7 +43,6 @@
         gtag('config', '{{.Site.GoogleAnalytics}}');
     </script>
     {{ end }}
-
 </head>
 
 </html>

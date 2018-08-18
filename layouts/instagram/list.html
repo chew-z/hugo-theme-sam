@@ -1,0 +1,15 @@
+{{ partial "head.html" . }}
+<body>
+    <div class="wrap">
+        <div class="section" id="content">{{ .Content }}</div>
+        {{ if isset $.Params "instagram" }}
+            {{ partial "instagram_flickity.html" . }}
+        {{ end }}
+        {{ if .Site.Params.mainMenu }}
+        <div class="section bottom-menu">
+            {{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+        </div>
+        {{ end }}
+        <div class="section footer">{{ partial "footer.html" . }}</div>
+    </div>
+</body>

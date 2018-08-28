@@ -22,27 +22,18 @@
     <!-- Characters max 60-->
     <title>{{.Title}}</title>
     <link rel="shortcut icon" href="{{.Site.Params.favicon | default "sam.ico" | absURL }}" id="favicon">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
-    <link rel="stylesheet" href="{{ "css/style.css" | absURL}}">
-    <link rel="stylesheet" href="{{ "css/instag.css" | absURL}}">
     <!-- Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
     <!-- jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js" async></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{ if .Site.GoogleAnalytics }}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.GoogleAnalytics}}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', '{{.Site.GoogleAnalytics}}');
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    {{ if isset $.Params "instagram" }}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{{ "js/instagram.js" | absURL }}"></script>
     {{ end }}
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL}}">
+    <link rel="stylesheet" href="{{ "css/instag.css" | absURL}}">
 </head>
 
 </html>
